@@ -13,3 +13,4 @@ hs_err_pid*
 
 basic/.idea/
 basic/basic.iml
+basic/target

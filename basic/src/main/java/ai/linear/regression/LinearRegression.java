@@ -13,6 +13,6 @@ public class LinearRegression {
     }
 
     public void count() {
-        
+
     }
 }
