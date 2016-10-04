@@ -1,10 +1,12 @@
 package calculator;
 
 import edu.emory.mathcs.backport.java.util.Collections;
+import jdk.nashorn.internal.ir.annotations.Immutable;
 
 import java.util.List;
 import java.util.stream.Stream;
 
+@Immutable
 public class ObservationContainer<OBSERVATION_TYPE> {
     private final List<OBSERVATION_TYPE> observations;
 

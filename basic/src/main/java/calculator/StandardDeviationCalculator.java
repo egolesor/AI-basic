@@ -2,7 +2,13 @@ package calculator;
 
 import ai.model.Point;
 
+/**
+ * To calculating the standard deviation from observations
+ */
 public class StandardDeviationCalculator {
+    private StandardDeviationCalculator() {
+    }
+
     public static StandardDeviation<Point> calc(ObservationContainer<Point> container) {
         Variance<Point> variance = VarianceCalculator.calc(container);
 
