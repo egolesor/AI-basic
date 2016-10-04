@@ -2,9 +2,6 @@ package ai.linear.regression;
 
 import ai.model.Line;
 import ai.model.Point;
-import jdk.nashorn.internal.objects.annotations.Constructor;
-import sun.plugin.dom.exception.InvalidStateException;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -64,7 +61,7 @@ class SimpleLinearRegression implements LinearRegression {
     @Override
     public Line result() {
         if(resultLine==null){
-            throw new InvalidStateException("The result is not set yet");
+            throw new RuntimeException("The result is not set yet");
         }
         return resultLine;
     }
