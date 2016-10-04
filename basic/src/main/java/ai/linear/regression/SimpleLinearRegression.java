@@ -61,7 +61,7 @@ class SimpleLinearRegression implements LinearRegression {
     @Override
     public Line result() {
         if(resultLine==null){
-            throw new RuntimeException("The result is not set yet");
+            throw new NullPointerException("The result is not set yet");
         }
         return resultLine;
     }
@@ -73,19 +73,19 @@ class SimpleLinearRegression implements LinearRegression {
      */
     protected double countSlope(){
         // sum(x - mean(x))*(y - mean(y))
-        double sum_0;
+        double sum0;
 
         // sum(x - mean(x))^2
-        double sum_1;
+        double sum1;
 
-        sum_0=sum_1=0;
+        sum0=sum1=0;
         double temp;
         for (Point point: observations){
-            temp = (point.x - meanPoint.x);
-            sum_0 += ( point.y - meanPoint.y ) * temp;
-            sum_1 += Math.pow(temp, 2);
+            temp = point.x - meanPoint.x;
+            sum0 += ( point.y - meanPoint.y ) * temp;
+            sum1 += Math.pow(temp, 2);
         }
-        return sum_0/sum_1;
+        return sum0/sum1;
     }
 
     /**
