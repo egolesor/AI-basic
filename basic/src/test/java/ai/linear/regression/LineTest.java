@@ -1,7 +1,6 @@
 package ai.linear.regression;
 
 import ai.model.Line;
-import org.apache.commons.math3.stat.regression.SimpleRegression;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

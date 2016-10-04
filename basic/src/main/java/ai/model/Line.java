@@ -5,22 +5,25 @@ import jdk.nashorn.internal.ir.annotations.Immutable;
 @Immutable
 public class Line {
 
+    /**
+     * lazy to string initialization
+     */
     private String toStringVar;
 
-    public final double alpha0;
-    public final double alpha1;
+    public final double slope;
+    public final double intercept;
 
-    public Line(double alpha0, double alpha1) {
-        this.alpha0 = alpha0;
-        this.alpha1 = alpha1;
+    public Line(double slope, double intercept) {
+        this.slope = slope;
+        this.intercept = intercept;
     }
 
     private String initToString(){
         return new StringBuilder()
                 .append("y=")
-                .append(alpha0)
+                .append(slope)
                 .append("x+")
-                .append(alpha1).toString();
+                .append(intercept).toString();
     }
 
     @Override
