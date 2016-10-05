@@ -23,6 +23,7 @@ public class LinearRegressionTest {
         linearRegression.count();
         spent = System.currentTimeMillis()-spent;
         assertTrue(spent<=timeExcepted);
+        System.out.println(linearRegression.result());
     }
 
 }

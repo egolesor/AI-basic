@@ -2,6 +2,7 @@ package ai.linear.regression;
 
 import ai.model.Line;
 import ai.model.Point;
+import calculator.ObservationContainer;
 import jdk.nashorn.internal.objects.annotations.Constructor;
 
 import java.util.List;
@@ -15,6 +16,15 @@ public interface LinearRegression {
     @Constructor
     static SimpleLinearRegression newSimpleLinear(){
         return new SimpleLinearRegression();
+    }
+
+    /**
+     * Static factory to get a new instance of {@link SimpleLinearRegression}
+     * @return
+     */
+    @Constructor
+    static LeastSquaresRegression newLeastSquaresRegression(){
+        return new LeastSquaresRegression();
     }
 
     /**
@@ -43,4 +53,6 @@ public interface LinearRegression {
      * @return - the result after calling the method {@link #count()}
      */
     Line result();
+
+    void addObservationContainer(ObservationContainer<Point> container);
 }

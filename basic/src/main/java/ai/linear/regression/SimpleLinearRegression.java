@@ -2,6 +2,8 @@ package ai.linear.regression;
 
 import ai.model.Line;
 import ai.model.Point;
+import calculator.ObservationContainer;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -66,6 +68,11 @@ class SimpleLinearRegression implements LinearRegression {
         return resultLine;
     }
 
+    @Override
+    public void addObservationContainer(ObservationContainer<Point> container) {
+        addObservations(container.listObservation());
+    }
+
     /**
      * The formula is line F(x)=slope*x + intercept
      * the method calculate the slope
@@ -98,4 +105,6 @@ class SimpleLinearRegression implements LinearRegression {
     protected double countIntercept(double slope){
         return meanPoint.y-(slope*meanPoint.x);
     }
+
+
 }
