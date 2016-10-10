@@ -22,6 +22,22 @@ public class Point {
 
     @Override
     public String toString() {
-        return x+" , " + y;
+        return x+" , " + y + " , " + z;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Point point = (Point) o;
+
+        return (x==point.x) &&(y==point.y) &&(z==point.z);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

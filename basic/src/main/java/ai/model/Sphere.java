@@ -9,7 +9,14 @@ public class Sphere {
         this.radious=radious;
     }
 
-    public double radious() {
+    public double radius() {
         return radious;
+    }
+
+    @Override
+    public String toString() {
+        return "Sphere{" +
+                "radious=" + radious +
+                '}';
     }
 }
