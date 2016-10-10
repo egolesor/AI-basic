@@ -1,4 +1,4 @@
-package calculator;
+package ai.model;
 
 import edu.emory.mathcs.backport.java.util.Collections;
 import jdk.nashorn.internal.ir.annotations.Immutable;

@@ -1,14 +1,16 @@
-package calculator;
+package calculator.statistic;
 
-import ai.model.Point;
+import calculator.model.Point;
+import ai.model.ObservationContainer;
+import calculator.model.Mean;
 
 public class MeanCalculator {
     public static Mean<Point> calc(ObservationContainer<Point> container) {
         double sumX, sumY;
         sumX = sumY = 0;
         for (Point point : container.listObservation()) {
-            sumX += point.x;
-            sumY += point.y;
+            sumX += point.xAxis();
+            sumY += point.yAxis();
         }
         sumX /= container.size();
         sumY /= container.size();

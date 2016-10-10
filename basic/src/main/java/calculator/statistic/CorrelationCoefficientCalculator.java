@@ -1,6 +1,8 @@
-package calculator;
+package calculator.statistic;
 
-import ai.model.Point;
+import calculator.model.Point;
+import ai.model.ObservationContainer;
+import calculator.model.CorrelationCoefficient;
 
 /**
  * To calculate the correlation of all observations
@@ -20,8 +22,8 @@ public class CorrelationCoefficientCalculator {
         double tempY;
 
         for(Point point : observationContainer.listObservation()){
-            tempX = point.x - meanPoint.x;
-            tempY = point.y - meanPoint.y;
+            tempX = point.xAxis() - meanPoint.xAxis();
+            tempY = point.yAxis() - meanPoint.yAxis();
             calc1+=tempX*tempY;
             calc2+= Math.pow(tempX,2);
             calc3+= Math.pow(tempY,2);

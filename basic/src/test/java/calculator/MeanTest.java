@@ -1,7 +1,10 @@
 package calculator;
 
 import ai.linear.regression.PointsGeneratorForTest;
-import ai.model.Point;
+import ai.model.ObservationContainer;
+import calculator.model.Point;
+import calculator.model.Mean;
+import calculator.statistic.MeanCalculator;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -16,8 +19,8 @@ public class MeanTest {
         ObservationContainer<Point> observationContainer = ObservationContainer.newContainer(points);
         Mean<Point> mean = MeanCalculator.calc(observationContainer);
 
-        assertEquals(mean.value().x, 5.5);
-        assertEquals(mean.value().y, 8.6);
+        assertEquals(mean.value().xAxis(), 5.5);
+        assertEquals(mean.value().yAxis(), 8.6);
 
     }
 
@@ -27,8 +30,8 @@ public class MeanTest {
         ObservationContainer<Point> observationContainer = ObservationContainer.newContainer(points);
         Mean<Point> mean = MeanCalculator.calc(observationContainer);
 
-        assertEquals(mean.value().x, 5.5);
-        assertEquals(mean.value().y, 5.5);
+        assertEquals(mean.value().xAxis(), 5.5);
+        assertEquals(mean.value().yAxis(), 5.5);
 
     }
 }

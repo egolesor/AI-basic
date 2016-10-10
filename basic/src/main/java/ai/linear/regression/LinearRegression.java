@@ -1,8 +1,8 @@
 package ai.linear.regression;
 
-import ai.model.Line;
-import ai.model.Point;
-import calculator.ObservationContainer;
+import calculator.model.Line;
+import calculator.model.Point;
+import ai.model.ObservationContainer;
 import jdk.nashorn.internal.objects.annotations.Constructor;
 
 import java.util.List;

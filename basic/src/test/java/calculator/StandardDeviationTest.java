@@ -1,7 +1,10 @@
 package calculator;
 
 import ai.linear.regression.PointsGeneratorForTest;
-import ai.model.Point;
+import ai.model.ObservationContainer;
+import calculator.model.Point;
+import calculator.model.StandardDeviation;
+import calculator.statistic.StandardDeviationCalculator;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -17,8 +20,8 @@ public class StandardDeviationTest {
 
         StandardDeviation<Point> standardDeviation = StandardDeviationCalculator.calc(container);
 
-        assertTrue(standardDeviation.value().x> 2.87 & standardDeviation.value().x < 2.88);
-        assertTrue(standardDeviation.value().y> 2.87 & standardDeviation.value().y < 2.88);
+        assertTrue(standardDeviation.value().xAxis()> 2.87 & standardDeviation.value().xAxis() < 2.88);
+        assertTrue(standardDeviation.value().yAxis()> 2.87 & standardDeviation.value().yAxis() < 2.88);
     }
 
     @Test
@@ -28,8 +31,8 @@ public class StandardDeviationTest {
 
         StandardDeviation<Point> standardDeviation = StandardDeviationCalculator.calc(container);
 
-        assertTrue(standardDeviation.value().x< 2.8722813233 & standardDeviation.value().x > 2.87228132);
-        assertTrue(standardDeviation.value().y> 1.42 & standardDeviation.value().y < 1.43);
+        assertTrue(standardDeviation.value().xAxis()< 2.8722813233 & standardDeviation.value().xAxis() > 2.87228132);
+        assertTrue(standardDeviation.value().yAxis()> 1.42 & standardDeviation.value().yAxis() < 1.43);
     }
 
 }

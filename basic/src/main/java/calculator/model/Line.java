@@ -1,4 +1,4 @@
-package ai.model;
+package calculator.model;
 
 import jdk.nashorn.internal.ir.annotations.Immutable;
 

@@ -1,6 +1,6 @@
 package ai.linear.regression;
 
-import ai.model.Point;
+import calculator.model.Point;
 
 import java.util.ArrayList;
 import java.util.List;

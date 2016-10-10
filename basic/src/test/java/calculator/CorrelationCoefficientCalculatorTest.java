@@ -1,7 +1,10 @@
 package calculator;
 
 import ai.linear.regression.PointsGeneratorForTest;
-import ai.model.Point;
+import ai.model.ObservationContainer;
+import calculator.model.Point;
+import calculator.model.CorrelationCoefficient;
+import calculator.statistic.CorrelationCoefficientCalculator;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -27,7 +30,6 @@ public class CorrelationCoefficientCalculatorTest {
         ObservationContainer<Point> observationContainer = ObservationContainer.newContainer(points);
 
         CorrelationCoefficient correlationCoefficient = CorrelationCoefficientCalculator.calc(observationContainer);
-        System.out.println(correlationCoefficient.value());
         assertTrue(correlationCoefficient.value() < 0.7 && correlationCoefficient.value() > 0.6093936);
     }
 

@@ -1,16 +1,16 @@
-package ai.model;
+package calculator.model;
 
 import jdk.nashorn.internal.ir.annotations.Immutable;
 
 @Immutable
 public class Point {
 
-    public final double x, y, z;
+    public final double xAxis, yAxis, zAxis;
 
-    private Point(double x, double y, double z) {
-        this.x = x;
-        this.y = y;
-        this.z=z;
+    private Point(double xAxis, double yAxis, double zAxis) {
+        this.xAxis = xAxis;
+        this.yAxis = yAxis;
+        this.zAxis=zAxis;
     }
 
     public static Point _2DNewInstanceOf(double x, double y){
@@ -22,7 +22,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return x+" , " + y + " , " + z;
+        return xAxis+" , " + yAxis + " , " + zAxis;
     }
 
     @Override
@@ -32,12 +32,24 @@ public class Point {
 
         Point point = (Point) o;
 
-        return (x==point.x) &&(y==point.y) &&(z==point.z);
+        return (xAxis==point.xAxis()) &&(yAxis==point.yAxis()) &&(zAxis==point.zAxis());
 
     }
 
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    public double yAxis() {
+        return yAxis;
+    }
+
+    public double xAxis() {
+        return xAxis;
+    }
+
+    public double zAxis() {
+        return zAxis;
     }
 }
