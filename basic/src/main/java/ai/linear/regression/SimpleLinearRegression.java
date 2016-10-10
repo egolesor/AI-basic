@@ -55,7 +55,6 @@ class SimpleLinearRegression implements LinearRegression {
     }
     @Override
     public LinearRegression addObservations(List<Point> points){
-        this.observations.addAll(points);
         points.forEach(this::addObservation);
         return this;
     }
