@@ -1,8 +1,8 @@
 package ai.linear.regression;
 
-import ai.model.Line;
-import ai.model.Point;
-import calculator.ObservationContainer;
+import calculator.model.Line;
+import calculator.model.Point;
+import ai.model.ObservationContainer;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -46,8 +46,8 @@ class SimpleLinearRegression implements LinearRegression {
 
     @Override
     public LinearRegression addObservation(final Point point){
-        sumX += point.x;
-        sumY += point.y;
+        sumX += point.xAxis();
+        sumY += point.yAxis();
         observationNumber++;
         meanPoint=Point._2DNewInstanceOf(sumX/observationNumber, sumY/observationNumber);
         observations.add(point);
@@ -87,8 +87,8 @@ class SimpleLinearRegression implements LinearRegression {
         sum0=sum1=0;
         double temp;
         for (Point point: observations){
-            temp = point.x - meanPoint.x;
-            sum0 += ( point.y - meanPoint.y ) * temp;
+            temp = point.xAxis() - meanPoint.xAxis();
+            sum0 += ( point.yAxis() - meanPoint.yAxis() ) * temp;
             sum1 += Math.pow(temp, 2);
         }
         return sum0/sum1;
@@ -102,7 +102,7 @@ class SimpleLinearRegression implements LinearRegression {
      * of the linear regression
      */
     protected double countIntercept(double slope){
-        return meanPoint.y-(slope*meanPoint.x);
+        return meanPoint.yAxis()-(slope*meanPoint.yAxis());
     }
 
 

@@ -1,6 +1,8 @@
-package calculator;
+package calculator.statistic;
 
-import ai.model.Point;
+import calculator.model.Point;
+import ai.model.ObservationContainer;
+import calculator.model.Variance;
 
 /**
  * To calculate the variance from observations
@@ -15,8 +17,8 @@ public class VarianceCalculator {
         double distanceXToMean = 0;
         double distanceYToMean = 0;
         for (Point point : container.listObservation()){
-            distanceXToMean += Math.pow(point.x - meanPoint.x, 2);
-            distanceYToMean += Math.pow(point.y - meanPoint.y, 2);
+            distanceXToMean += Math.pow(point.xAxis() - meanPoint.xAxis(), 2);
+            distanceYToMean += Math.pow(point.yAxis() - meanPoint.yAxis(), 2);
         }
         distanceXToMean = distanceXToMean/container.size();
         distanceYToMean = distanceYToMean/container.size();

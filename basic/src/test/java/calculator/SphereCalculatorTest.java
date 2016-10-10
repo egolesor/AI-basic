@@ -1,8 +1,10 @@
 package calculator;
 
-import ai.model.LocationOnSphere;
-import ai.model.Point;
-import ai.model.Sphere;
+import calculator.model.CommonSphere;
+import calculator.model.LocationOnSphere;
+import calculator.model.Point;
+import calculator.model.Sphere;
+import calculator.geometry.SphereCalculator;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -83,17 +85,17 @@ public class SphereCalculatorTest {
                 {SphereCalculator.simpleDistance2Point(
                         new LocationOnSphere(Math.toRadians(10), Math.toRadians(10)),
                         new LocationOnSphere(Math.toRadians(20), Math.toRadians(10)),
-                        new Sphere(6378)), 1113.1
+                        CommonSphere.EARTH.sphere()), 1113.1
                 },
                 {SphereCalculator.simpleDistance2Point(
                         new LocationOnSphere(Math.toRadians(0), Math.toRadians(0)),
                         new LocationOnSphere(Math.toRadians(0), Math.toRadians(40)),
-                        new Sphere(6378)), 4452.6
+                        CommonSphere.EARTH.sphere()), 4452.6
                 },
                 {SphereCalculator.simpleDistance2Point(
                         new LocationOnSphere(Math.toRadians(20), Math.toRadians(44)),
                         new LocationOnSphere(Math.toRadians(10), Math.toRadians(40)),
-                        new Sphere(6378)), 1193.1
+                        CommonSphere.EARTH.sphere()), 1193.1
                 }
         };
     }
@@ -120,7 +122,6 @@ public class SphereCalculatorTest {
 
     @Test(dataProvider = "distanceDataProvider")
     public void testDistance(double countedSurface, double exceptedSurface){
-        System.out.println(countedSurface);
         assertTrue(countedSurface <exceptedSurface+0.1 && countedSurface > exceptedSurface-0.1);
     }
 

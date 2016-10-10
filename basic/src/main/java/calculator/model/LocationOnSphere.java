@@ -1,4 +1,4 @@
-package ai.model;
+package calculator.model;
 
 import jdk.nashorn.internal.ir.annotations.Immutable;
 
@@ -17,6 +17,23 @@ public class LocationOnSphere {
 
     public double longitude() {
         return longitude;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        LocationOnSphere that = (LocationOnSphere) o;
+
+        if (Double.compare(that.latitude, latitude) != 0) return false;
+        return Double.compare(that.longitude, longitude) == 0;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 
     @Override

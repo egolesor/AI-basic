@@ -1,6 +1,6 @@
 package ai.linear.regression;
 
-import ai.model.Line;
+import calculator.model.Line;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

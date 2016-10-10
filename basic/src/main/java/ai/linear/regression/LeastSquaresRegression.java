@@ -1,10 +1,10 @@
 package ai.linear.regression;
 
-import ai.model.Line;
-import ai.model.Point;
-import calculator.CorrelationCoefficientCalculator;
-import calculator.ObservationContainer;
-import calculator.StandardDeviationCalculator;
+import calculator.model.Line;
+import calculator.model.Point;
+import calculator.statistic.CorrelationCoefficientCalculator;
+import ai.model.ObservationContainer;
+import calculator.statistic.StandardDeviationCalculator;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -28,8 +28,8 @@ public class LeastSquaresRegression implements LinearRegression {
 
     @Override
     public LinearRegression addObservation(Point point) {
-        sumX+= point.x;
-        sumY+= point.y;
+        sumX+= point.xAxis;
+        sumY+= point.yAxis;
         observations.add(point);
         return this;
     }
@@ -58,7 +58,7 @@ public class LeastSquaresRegression implements LinearRegression {
         double correlation = CorrelationCoefficientCalculator
                 .calc(observationContainer).value();
 
-        return correlation*(deviationPoint.y/deviationPoint.x);
+        return correlation*(deviationPoint.yAxis/deviationPoint.xAxis);
     }
     /**
      * The formula is line F(x)=slope*x + intercept
@@ -68,6 +68,6 @@ public class LeastSquaresRegression implements LinearRegression {
      * of the linear regression
      */
     protected double countIntercept(double slope, Point anyObservation){
-        return anyObservation.y-(slope*anyObservation.x);
+        return anyObservation.yAxis-(slope*anyObservation.xAxis);
     }
 }

@@ -1,8 +1,6 @@
 package ai.linear.regression;
 
-import ai.model.Line;
-import ai.model.Point;
-import calculator.ObservationContainer;
+import calculator.model.Point;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -31,6 +29,5 @@ public class LeastSquaresRegressionTest {
         linearRegression.count();
         spent = System.currentTimeMillis()-spent;
         assertTrue(spent<=timeExcepted);
-        System.out.println(linearRegression.result());
     }
 }
